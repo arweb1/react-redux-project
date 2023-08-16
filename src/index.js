@@ -1,19 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore, bindActionCreators } from 'redux';
+import { createStore } from 'redux';
 import reducer from './reducer';
 import { Provider } from 'react-redux';
 
-
 import App from './components/App';
-
 
 const store = createStore(reducer);
 
-const {dispatch, subscribe, getState} = store 
-const {inc, dec, rnd } = bindActionCreators(actions, dispatch)
-
-const update = () => {
   ReactDOM.render(
     <React.StrictMode>
         <Provider store={store}>
@@ -22,7 +16,6 @@ const update = () => {
     </React.StrictMode>,
     document.getElementById('root')
   );
-}
 
 
 
